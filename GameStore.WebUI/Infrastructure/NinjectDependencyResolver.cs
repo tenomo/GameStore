@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace GameStore.Infrastructure
+namespace GameStore.WebUI.Infrastructure
 {
     public class NinjectDependencyResolver : IDependencyResolver
     {

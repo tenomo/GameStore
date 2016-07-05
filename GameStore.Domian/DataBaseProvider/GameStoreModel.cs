@@ -7,17 +7,3 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameStore.Models.Concrete
-{
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Game
-    {
-        public int GameId { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
-        public Nullable<double> Price { get; set; }
-    }
-}
