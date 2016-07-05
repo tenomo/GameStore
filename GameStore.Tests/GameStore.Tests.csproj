@@ -61,10 +61,6 @@
       <Project>{3eb713fc-e95b-42de-95fd-7ab70af1c74e}</Project>
       <Name>GameStore.Domian</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GameStore\GameStore.csproj">
-      <Project>{214263f6-6f5d-4cbc-bfd2-0725e388b37a}</Project>
-      <Name>GameStore</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

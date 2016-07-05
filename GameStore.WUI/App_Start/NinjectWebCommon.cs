@@ -1,7 +1,7 @@
-[assembly: WebActivator.PreApplicationStartMethod(typeof(GameStore.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(GameStore.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(GameStore.WUI.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(GameStore.WUI.App_Start.NinjectWebCommon), "Stop")]
 
-namespace GameStore.App_Start
+namespace GameStore.WUI.App_Start
 {
     using System;
     using System.Web;
@@ -54,8 +54,8 @@ namespace GameStore.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             System.Web.Mvc.DependencyResolver.SetResolver(new
-        GameStore.Infrastructure.NinjectDependencyResolver(kernel));
+           GameStore.WebUI.Infrastructure.NinjectDependencyResolver(kernel));
+
         }
     }
 }
-

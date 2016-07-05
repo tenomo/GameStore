@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace GameStore.Controllers
+namespace GameStore.WebUI.Controllers
 {
     public class GameController : Controller
     {
@@ -22,7 +19,8 @@ namespace GameStore.Controllers
         {
 
             if (gameRepository == null)
-                throw new Exception(gameRepository.ToString());
+                gameRepository = new GameStore.Domian.Concrete.GameRepository();
+
             return View(this.gameRepository);
         }
     }

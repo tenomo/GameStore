@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace GameStore.WebUI
+namespace GameStore.WebUI.Controllers
 {
     public class GameController : Controller
     {
@@ -19,7 +19,8 @@ namespace GameStore.WebUI
         {
 
             if (gameRepository == null)
-                throw new Exception(gameRepository.ToString());
+                gameRepository = new GameStore.Domian.Concrete.GameRepository();
+
             return View(this.gameRepository);
         }
     }
