@@ -1,29 +1,26 @@
-﻿using System;
+﻿using GameStore.WUI.Models.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
-namespace GameStore.WebUI.Controllers
+namespace GameStore.WUI.Controllers
 {
     public class GameController : Controller
     {
-        // GET: Game
-
-        GameStore.Models.Abstract.IGameRepository  gameRepository = 
-            new GameStore.Domian.Concrete.GameRepository(
-                System.Configuration.ConfigurationManager.ConnectionStrings[0].ConnectionString);
-
-         
-        public GameController(GameStore.Models.Abstract.IGameRepository repo)
+        GameStore.WUI.Models.Abstract.IGameRepository repository;// = new Models.GameStoreDataBaseEntities();
+        public GameController(IGameRepository repo)
         {
-            gameRepository = repo;
+            repository = repo;
         }
 
+        // GET: TwoGame
         public ActionResult List()
         {
-
-            //if (gameRepository == null)
-            //    gameRepository = new GameStore.Domian.Concrete.GameRepository();
-           
-            return View(this.gameRepository.Games);
+            List<GameStore.WUI.Models.Game> games = new
+                List<Models.Game>( repository.Games);
+            return View(games);
         }
     }
 }

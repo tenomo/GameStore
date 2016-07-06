@@ -58,13 +58,13 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameStore.Domian\GameStore.Domian.csproj">
-      <Project>{3eb713fc-e95b-42de-95fd-7ab70af1c74e}</Project>
-      <Name>GameStore.Domian</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\GameStore.WUI\GameStore.WUI.csproj">
+      <Project>{8dace5e3-ac03-42bb-bea2-e445704687ab}</Project>
+      <Name>GameStore.WUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

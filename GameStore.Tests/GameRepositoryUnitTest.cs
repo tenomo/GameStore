@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GameStore.Domian.DataBaseProvider;
+using GameStore.WUI.Models.Concrete;
+using GameStore.WUI.Models;
 
 namespace GameStore.Tests
 {
@@ -12,7 +12,7 @@ namespace GameStore.Tests
     [TestClass]
     public class GameRepositoryUnitTest
     {
-        GameStore.Domian.Concrete.GameRepository gameRepository;
+        GameRepository gameRepository;
         List<Game> games;
         public GameRepositoryUnitTest()
         {
@@ -20,7 +20,7 @@ namespace GameStore.Tests
             // TODO: Add constructor logic here
             //
 
-            this.gameRepository = new Domian.Concrete.GameRepository();
+            this.gameRepository = new GameRepository();
             games = new List<Game>(this.gameRepository.Games);
         }
 
@@ -85,19 +85,20 @@ namespace GameStore.Tests
 
         public class TestingGame : Game
         {
-            private int index;
+            private static int index=0;
             
 
             public TestingGame ()
             {
 
-                this.Name = "test name; index " + index;  
-                this.Description = "test name; index " + index;
-                this.Category = "test name; index " + index;
-                this.Price = this.GeneratePrice();
+                this.Name = "test name; " + GenerateNumber() ;
+                this.Description = "test name; " + GenerateNumber();
+                this.Category = "test name; " + GenerateNumber();
+                this.Price = this.GenerateNumber();
+                
             }
 
-            private float GeneratePrice ()
+            private float GenerateNumber ()
             {
                 Random random = new Random();
                 return random.Next(20, 100);

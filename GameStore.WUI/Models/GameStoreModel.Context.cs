@@ -25,6 +25,6 @@ namespace GameStore.WUI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Game> Game { get; set; }
+        public virtual DbSet<Game> Games { get; set; }
     }
 }

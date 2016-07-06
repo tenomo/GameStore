@@ -187,11 +187,12 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Controllers\TwoGameController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Abstract\IGameRepository.cs" />
+    <Compile Include="Models\Concrete\GameRepository.cs" />
     <Compile Include="Models\Game.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
@@ -223,7 +224,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Game\List.cshtml" />
-    <Content Include="Views\TwoGame\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -232,12 +232,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\GameStore.Domian\GameStore.Domian.csproj">
-      <Project>{3eb713fc-e95b-42de-95fd-7ab70af1c74e}</Project>
-      <Name>GameStore.Domian</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

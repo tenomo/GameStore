@@ -16,7 +16,7 @@ namespace GameStore.WUI
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "TwoGame", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Game", action = "List", id = UrlParameter.Optional }
             );
         }
     }
