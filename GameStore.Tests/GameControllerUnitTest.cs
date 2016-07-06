@@ -2,26 +2,22 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GameStore.Domian.DataBaseProvider;
 
 namespace GameStore.Tests
 {
     /// <summary>
-    /// Summary description for GameRepositoryUnitTest
+    /// Summary description for GameControllerUnitTest
     /// </summary>
     [TestClass]
-    public class GameRepositoryUnitTest
+    public class GameControllerUnitTest
     {
-        GameStore.Domian.Concrete.GameRepository gameRepository;
-        List<Game> games;
-        public GameRepositoryUnitTest()
+        public GameControllerUnitTest()
         {
             //
             // TODO: Add constructor logic here
             //
 
-            this.gameRepository = new Domian.Concrete.GameRepository();
-            games = new List<Game>(this.gameRepository.Games);
+
         }
 
         private TestContext testContextInstance;
@@ -65,43 +61,11 @@ namespace GameStore.Tests
         #endregion
 
         [TestMethod]
-        public void TestConnectedToDB()
+        public void TestMethod1()
         {
-            Assert.IsNotNull(this.gameRepository.Games);
-        }
-      
-        [TestMethod]
-        public void TestAddedItemsToDB()
-        {
-            int gamesCount = games.Count;
-            for (int i = 0; i < 3; i++)
-            {
-                this.games.Add(new TestingGame());
-                Assert.AreEqual<Int32>(gamesCount + 1, games.Count);
-                gamesCount = games.Count;
-            }
-        }
-
-
-        public class TestingGame : Game
-        {
-            private int index;
-            
-
-            public TestingGame ()
-            {
-
-                this.Name = "test name; index " + index;  
-                this.Description = "test name; index " + index;
-                this.Category = "test name; index " + index;
-                this.Price = this.GeneratePrice();
-            }
-
-            private float GeneratePrice ()
-            {
-                Random random = new Random();
-                return random.Next(20, 100);
-            }
+            //
+            // TODO: Add test logic here
+            //
         }
     }
 }

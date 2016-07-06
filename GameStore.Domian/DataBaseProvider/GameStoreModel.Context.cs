@@ -12,17 +12,17 @@ namespace GameStore.Domian.DataBaseProvider
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+   
     public partial class GameStoreDataBaseEntities : DbContext
     {
-        public GameStoreDataBaseEntities()
-            : base("name=GameStoreDataBaseEntities")
-        {
+        public GameStoreDataBaseEntities ( string connectionString)
+            : base(connectionString)
+        {  
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            //throw new UnintentionalCodeFirstException();
         }
     
         public DbSet<Game> Games { get; set; }

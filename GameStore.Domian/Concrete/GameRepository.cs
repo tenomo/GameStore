@@ -1,5 +1,6 @@
 ﻿using GameStore.Domian.DataBaseProvider;
 using System.Collections.Generic;
+    using System.Configuration;
 using GameStore.Models.Abstract;
 
 namespace GameStore.Domian.Concrete
@@ -10,9 +11,13 @@ namespace GameStore.Domian.Concrete
         GameStoreDataBaseEntities context;
         public GameRepository()
         {
-            context = new GameStoreDataBaseEntities();
+            context = new GameStoreDataBaseEntities(
+                ConfigurationManager.ConnectionStrings[0].ConnectionString);
         }
-        
+        public GameRepository( string connectionString)
+        {
+            context = new GameStoreDataBaseEntities(connectionString);
+        }
 
         public IEnumerable<Game> Games
         {

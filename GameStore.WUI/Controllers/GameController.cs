@@ -7,7 +7,9 @@ namespace GameStore.WebUI.Controllers
     {
         // GET: Game
 
-        GameStore.Models.Abstract.IGameRepository gameRepository;
+        GameStore.Models.Abstract.IGameRepository  gameRepository = 
+            new GameStore.Domian.Concrete.GameRepository(
+                System.Configuration.ConfigurationManager.ConnectionStrings[0].ConnectionString);
 
          
         public GameController(GameStore.Models.Abstract.IGameRepository repo)
@@ -15,13 +17,13 @@ namespace GameStore.WebUI.Controllers
             gameRepository = repo;
         }
 
-        public ViewResult List()
+        public ActionResult List()
         {
 
-            if (gameRepository == null)
-                gameRepository = new GameStore.Domian.Concrete.GameRepository();
-
-            return View(this.gameRepository);
+            //if (gameRepository == null)
+            //    gameRepository = new GameStore.Domian.Concrete.GameRepository();
+           
+            return View(this.gameRepository.Games);
         }
     }
 }
