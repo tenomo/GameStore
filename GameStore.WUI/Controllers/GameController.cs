@@ -9,18 +9,26 @@ namespace GameStore.WUI.Controllers
 {
     public class GameController : Controller
     {
-        GameStore.WUI.Models.Abstract.IGameRepository repository;// = new Models.GameStoreDataBaseEntities();
+       private IGameRepository repository;
+        public int pageSize = 4;
         public GameController(IGameRepository repo)
         {
             repository = repo;
         }
 
         // GET: TwoGame
-        public ActionResult List()
+        public ActionResult List(int page)
         {
-            List<GameStore.WUI.Models.Game> games = new
-                List<Models.Game>( repository.Games);
-            return View(games);
+            //List<GameStore.WUI.Models.Game> games = new
+            //    List<Models.Game>( repository.Games);
+
+
+            return View(
+                repository.Games
+                .OrderBy(game=>game.Id)
+                .Skip((page-1)*pageSize)
+                .Take(pageSize)
+                );
         }
     }
 }

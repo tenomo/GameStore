@@ -1,27 +1,21 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GameStore.WUI.Models.Concrete;
-using GameStore.WUI.Models;
 
-namespace GameStore.Tests
+namespace GameStore.UnitTest
 {
     /// <summary>
-    /// Summary description for GameRepositoryUnitTest
+    /// Summary description for GameControllerUnitTest
     /// </summary>
     [TestClass]
-    public class GameRepositoryUnitTest
+    public class GameControllerUnitTest
     {
-        GameRepository gameRepository;
-        List<Game> games;
-        public GameRepositoryUnitTest()
+        public GameControllerUnitTest()
         {
             //
             // TODO: Add constructor logic here
             //
-
-            this.gameRepository = new GameRepository();
-            games = new List<Game>(this.gameRepository.Games);
         }
 
         private TestContext testContextInstance;
@@ -65,44 +59,11 @@ namespace GameStore.Tests
         #endregion
 
         [TestMethod]
-        public void TestConnectedToDB()
+        public void TestMethod1()
         {
-            Assert.IsNotNull(this.gameRepository.Games);
-        }
-      
-        [TestMethod]
-        public void TestAddedItemsToDB()
-        {
-            int gamesCount = games.Count;
-            for (int i = 0; i < 3; i++)
-            {
-                this.games.Add(new TestingGame());
-                Assert.AreEqual<Int32>(gamesCount + 1, games.Count);
-                gamesCount = games.Count;
-            }
-        }
-
-
-        public class TestingGame : Game
-        {
-            private static int index=0;
-            
-
-            public TestingGame ()
-            {
-
-                this.Name = "test name; " + GenerateNumber() ;
-                this.Description = "test name; " + GenerateNumber();
-                this.Category = "test name; " + GenerateNumber();
-                this.Price = this.GenerateNumber();
-                
-            }
-
-            private float GenerateNumber ()
-            {
-                Random random = new Random();
-                return random.Next(20, 100);
-            }
+            //
+            // TODO: Add test logic here
+            //
         }
     }
 }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Tests", "GameStore.Tests\GameStore.Tests.csproj", "{A5BA81E2-E334-4A1E-9663-5D30DA7B7D09}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.WUI", "GameStore.WUI\GameStore.WUI.csproj", "{8DACE5E3-AC03-42BB-BEA2-E445704687AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.UnitTest", "GameStore.UnitTest\GameStore.UnitTest.csproj", "{2DAFE76F-0574-444A-A774-3A92115A53C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5BA81E2-E334-4A1E-9663-5D30DA7B7D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5BA81E2-E334-4A1E-9663-5D30DA7B7D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5BA81E2-E334-4A1E-9663-5D30DA7B7D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5BA81E2-E334-4A1E-9663-5D30DA7B7D09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8DACE5E3-AC03-42BB-BEA2-E445704687AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DACE5E3-AC03-42BB-BEA2-E445704687AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DACE5E3-AC03-42BB-BEA2-E445704687AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DACE5E3-AC03-42BB-BEA2-E445704687AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DAFE76F-0574-444A-A774-3A92115A53C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DAFE76F-0574-444A-A774-3A92115A53C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DAFE76F-0574-444A-A774-3A92115A53C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DAFE76F-0574-444A-A774-3A92115A53C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

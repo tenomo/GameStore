@@ -190,6 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\Abstract\IGameRepository.cs" />
     <Compile Include="Models\Concrete\GameRepository.cs" />
@@ -211,6 +212,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameStoreModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

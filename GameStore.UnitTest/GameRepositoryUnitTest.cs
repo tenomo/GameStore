@@ -2,25 +2,30 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GameStore.WUI.Models;
+using GameStore.WUI.Models.Concrete;
 
-namespace GameStore.Tests
+namespace GameStore.UnitTest
 {
     /// <summary>
-    /// Summary description for GameControllerUnitTest
+    /// Summary description for GameRepositoryUnitTest
     /// </summary>
     [TestClass]
-    public class GameControllerUnitTest
+    public class GameRepositoryUnitTest
     {
-        public GameControllerUnitTest()
+        public GameRepositoryUnitTest()
         {
             //
             // TODO: Add constructor logic here
             //
 
-
+            this.gameRepository = new GameRepository();
+            this.games = new List<Game>(this.gameRepository.Games);
         }
 
         private TestContext testContextInstance;
+        private GameRepository gameRepository;
+        private List <Game> games;
 
         /// <summary>
         ///Gets or sets the test context which provides
@@ -36,6 +41,8 @@ namespace GameStore.Tests
             {
                 testContextInstance = value;
             }
+
+            
         }
 
         #region Additional test attributes
@@ -59,13 +66,45 @@ namespace GameStore.Tests
         // public void MyTestCleanup() { }
         //
         #endregion
+        [TestMethod]
+        public void TestConnectedToDB()
+        {
+            Assert.IsNotNull(this.gameRepository.Games);
+        }
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestAddedItemsToDB()
         {
-            //
-            // TODO: Add test logic here
-            //
+            int gamesCount = games.Count;
+            for (int i = 0; i < 3; i++)
+            {
+                this.games.Add(new TestingGame());
+                Assert.AreEqual<Int32>(gamesCount + 1, games.Count);
+                gamesCount = games.Count;
+            }
+        }
+
+
+        public class TestingGame : Game
+        {
+            private static int index = 0;
+
+            public TestingGame()
+            {
+
+                this.Name = "test name; " + GenerateNumber();
+                this.Description = "test name; " + GenerateNumber();
+                this.Category = "test name; " + GenerateNumber();
+                this.Price = this.GenerateNumber();
+
+            }
+
+            private float GenerateNumber()
+            {
+                Random random = new Random();
+                return random.Next(20, 100);
+            }
         }
     }
 }
+ 

@@ -11,8 +11,7 @@ namespace GameStore.WUI.Models.Concrete
         public GameRepository()
         {
             context = new GameStoreDataBaseEntities();
-        }
-      
+        }     
 
         public IEnumerable<Game> Games
         {
@@ -22,4 +21,6 @@ namespace GameStore.WUI.Models.Concrete
             }
         }
        }
+
+
     }
