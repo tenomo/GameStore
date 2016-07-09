@@ -35,14 +35,14 @@
                     @((line.Quantity * line.Game.Price).ToString("# $"))
                 </td>
 
-                <td>
+                @**@<td>
                     @using (Html.BeginForm("RemoveFromCart", "Cart"))
                     {
                         @Html.Hidden("gameId", line.Game.Id)
                         @Html.HiddenFor(x => x.ReturnUrl)
                         <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
                     }
-                </td>
+                </td>*
 
             </tr>
         }
@@ -61,4 +61,5 @@
 
 <div class="text-center">
     <a class="btn btn-primary" href="@Model.ReturnUrl">Продолжить покупки</a>
+    @Html.ActionLink("Оформить заказ", "Checkout", null, new { @class = "btn btn-primary" })
 </div>

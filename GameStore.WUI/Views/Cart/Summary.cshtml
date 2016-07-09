@@ -1,8 +1,9 @@
-﻿@model GameStore.WUI.Models.Concrete.Cart
-<div class="navbar-right">
-    @Ajax.ActionLink("Заказать", "Index", "Cart",
+﻿@model GameStore.WUI.Models.Concrete.Cart 
+ 
+<div class="navbar-right">   
+
+    @Html.ActionLink("Заказать", "Index", "Cart",
     new { returnUrl = Request.Url.PathAndQuery },
-    //new AjaxOptions(),
     new { @class = "btn btn-default navbar-btn" })
 </div>
 

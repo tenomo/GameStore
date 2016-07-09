@@ -4,7 +4,9 @@ using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using GameStore.WUI.Infrastructure.Binders;
+//using GameStore.WUI.Infrastructure.Binders;
+using GameStore.WUI.Models.Concrete.EmailHandler;
+using System.Configuration;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -30,7 +32,16 @@ namespace GameStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IGameRepository>().To<GameRepository>(); 
+            kernel.Bind<IGameRepository>().To<GameRepository>();
+
+            EmailSettings emailSettings = new EmailSettings
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager
+                    .AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
+                .WithConstructorArgument("settings", emailSettings);
         }
     }
 }
