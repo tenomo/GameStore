@@ -4,6 +4,7 @@ using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using GameStore.WUI.Infrastructure.Binders;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -29,7 +30,7 @@ namespace GameStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IGameRepository>().To<GameRepository>();
+            kernel.Bind<IGameRepository>().To<GameRepository>(); 
         }
     }
 }

@@ -1,16 +1,19 @@
-﻿@model IEnumerable<GameStore.WUI.Models.Game>
+﻿ 
+@using GameStore.WUI.HtmlHelpers
+@using GameStore.WUI.Models
+
+@model GamesListViewModel
+ 
 
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Товары";
 }
 
-@foreach (var p in @Model)
+@foreach (var p in @Model.Games)
 {
-    <div>
-        <h3>@p.Name</h3>
-        <p>@p.Description</p>
-        <p>@p.Category</p>
-        <h4>@p.Price.ToString("# $")</h4>
-    </div>
+    @Html.Partial("GameSummary", p)
 }
 
+<div class="btn-group pull-right" >
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>

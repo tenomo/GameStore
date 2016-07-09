@@ -21,5 +21,13 @@ namespace GameStore.WUI.Models
         {
             get { return (int)Math.Ceiling((decimal)TotalItemsCount / ItemsPerPageCount); }
         }
+ 
+
+        public PagingInfo(int currentPageNumber, int itemsPerPageCount, int totalItemsCount)
+        {
+            this.CurrentPageNumber = currentPageNumber;
+            this.ItemsPerPageCount = itemsPerPageCount;
+            this.TotalItemsCount = totalItemsCount;
+        }
     }
 }
