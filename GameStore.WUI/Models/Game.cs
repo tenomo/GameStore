@@ -9,15 +9,25 @@
 
 namespace GameStore.WUI.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Game
     {
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
+
+        [Display(Name = "Название")]
         public string Name { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Описание")]
         public string Category { get; set; }
+
+        [Display(Name = "Категория")]
         public string Description { get; set; }
+
+        [Display(Name = "Price ($)")]
         public double Price { get; set; }
     }
 }

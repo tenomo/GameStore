@@ -22,7 +22,7 @@ namespace GameStore.WUI.Controllers
             /// </summary>
             /// <param name="category"></param>
             /// <returns></returns>
-        public PartialViewResult Menu(string category = null)
+        public PartialViewResult Menu(string category = null)//, bool horizontalNav = false)
         {
             ViewBag.SelectedCategory = category;
 
@@ -31,7 +31,10 @@ namespace GameStore.WUI.Controllers
               .Select(game => game.Category)
               .Distinct()
               .OrderBy(x => x);
-            return PartialView(categories);
+
+            //string viewName = horizontalNav ? "MenuHorizontal" : "Menu";
+
+            return PartialView("FlexMenu",categories);
         }
     }
 }

@@ -73,16 +73,16 @@ namespace GameStore.WUI.Controllers
             return PartialView(cart);
         }
 
-        // <summary>
-        // Payment process checkout
-        // </summary>
-        // <param name = "cart" ></ param >
-        // < param name="shippingDetails"></param>
-        // <returns></returns>
-        //public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
-        //{
-        //    return View(new ShippingDetails());
-        //}
+         //<summary>
+         //Payment process checkout
+         //</summary>
+         //<param name = "cart" ></ param >
+         //< param name="shippingDetails"></param>
+         //<returns></returns>
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
+        }
 
         [HttpPost]
         public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
