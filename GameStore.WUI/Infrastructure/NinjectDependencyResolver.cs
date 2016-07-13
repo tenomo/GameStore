@@ -4,9 +4,10 @@ using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-//using GameStore.WUI.Infrastructure.Binders;
 using GameStore.WUI.Models.Concrete.EmailHandler;
 using System.Configuration;
+using GameStore.WUI.Infrastructure.Abstract; 
+using GameStore.WUI.Infrastructure.Concrete;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -42,6 +43,8 @@ namespace GameStore.WebUI.Infrastructure
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
                 .WithConstructorArgument("settings", emailSettings);
+
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }

@@ -18,16 +18,21 @@ namespace GameStore.WUI.Models
         public int Id { get; set; }
 
         [Display(Name = "Название")]
+        [Required(ErrorMessage = "Пожалуйста, введите название игры")]
         public string Name { get; set; }
 
         [DataType(DataType.MultilineText)]
         [Display(Name = "Описание")]
+        [Required(ErrorMessage = "Пожалуйста, введите описание для игры")]
         public string Category { get; set; }
 
         [Display(Name = "Категория")]
+        [Required(ErrorMessage = "Пожалуйста, укажите категорию для игры")]
         public string Description { get; set; }
 
         [Display(Name = "Price ($)")]
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для цены")]
         public double Price { get; set; }
     }
 }
